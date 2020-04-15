@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zf.f1.mapper.FundCodeListMapper">
+	<select id="getNewNetWorthForSaleFund" resultType="double">
+		select net_worth from fund_code_list
+		where fund_code = #{fundCode} 
+		order by create_date desc 
+		limit 0,1
+	</select>
+	
+</mapper>

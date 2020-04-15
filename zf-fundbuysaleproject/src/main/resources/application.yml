@@ -1,0 +1,33 @@
+server:
+  port: 1040
+  servlet:
+    context-path: /    #ROOT
+    
+spring:
+  application:
+    name: fundbuysaleproject
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/zf?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: root  
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}   
+  
+#mybatis-plush配置
+mybatis-plus:
+  type-aliases-package: com.zf.c1.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+#数据库执行的日志
+logging:
+  level:
+    com.zf.l1.mapper: debug   
