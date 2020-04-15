@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: commonsproject
+
+server:
+  port: 1010
+  servlet:
+    context-path: /    #ROOT
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+#mybatis-plush配置
+
+#数据库执行的日志
+logging:
+  level:
+    com.zf.l1.mapper: debug   
