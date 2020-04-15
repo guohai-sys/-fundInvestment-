@@ -1,0 +1,9 @@
+eureka:
+  instance:
+    hostname: eureka2
+    prefer-ip-address: true # 使用ip进行注册
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka1:2001/eureka
